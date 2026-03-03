@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日财经 | Finance Daily</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">
+          <span class="title-icon">📈</span>
+          每日财经
+          <span class="title-sub">Finance Daily</span>
+        </h1>
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" title="切换主题">🌙</button>
+          <button class="refresh-btn" id="refreshBtn" title="刷新数据">🔄</button>
+        </div>
+      </div>
+      <p class="subtitle">
+        最后更新: <span id="lastUpdate">加载中...</span>
+      </p>
+    </header>
+
+    <nav class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">全部</button>
+    </nav>
+
+    <main class="news-grid" id="newsGrid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>正在加载财经资讯...</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> 每日财经 | 数据来源于各大财经媒体</p>
+      <p class="footer-note">每2小时自动更新</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
