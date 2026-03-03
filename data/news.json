@@ -1,145 +1,80 @@
 {
-  "lastUpdate": "2026-03-03T04:44:48.122Z",
-  "totalCount": 15,
+  "lastUpdate": "2026-03-03T04:52:31.745Z",
+  "totalCount": 7,
   "stats": {
-    "gold": 2,
-    "stock": 13
+    "gold": 5,
+    "stock": 2
   },
   "news": [
     {
-      "id": "qjb2yszvm2",
-      "title": "Dow Jones And U.S. Stocks Outlook: War Begins, Wall Street Unfazed (For Now!)",
-      "summary": "暂无摘要...",
-      "source": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4877417-dow-jones-us-stocks-outlook-war-begins-wall-street-unfazed-for-now?source=feed_all_articles",
-      "publishTime": "2026-03-03T04:40:00.000Z",
-      "category": "股市"
+      "id": "kl39bz7q1f",
+      "title": "Elevated Errors in Claude.ai",
+      "summary": "Article URL: https://status.claude.com/incidents/yf48hzysrvl5 Comments URL: https://news.ycombinator.com/item?id=47227647 Points: 9 # Comments: 6...",
+      "source": "Hacker News",
+      "url": "https://status.claude.com/incidents/yf48hzysrvl5",
+      "publishTime": "2026-03-03T03:31:07.000Z",
+      "category": "黄金",
+      "image": null
     },
     {
-      "id": "bfdkya9u34d",
-      "title": "Occidental Petroleum: Strong Execution, But The Easy Upside Is Gone (Rating Downgrade)",
-      "summary": "暂无摘要...",
-      "source": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4877411-occidental-petroleum-strong-execution-but-the-easy-upside-is-gone-rating-downgrade?source=feed_all_articles",
-      "publishTime": "2026-03-03T04:17:54.000Z",
-      "category": "股市"
+      "id": "9s87mya1a1s",
+      "title": "Show HN: Giggles – A batteries-included React framework for TUIs",
+      "summary": "i built a framework that handles focus and input routing automatically for you -- something born out of the things that ink leaves to you, and inspire...",
+      "source": "Hacker News",
+      "url": "https://github.com/zion-off/giggles",
+      "publishTime": "2026-03-03T02:26:44.000Z",
+      "category": "黄金",
+      "image": null
     },
     {
-      "id": "qcc0pzuptn",
-      "title": "Gold rises for fifth day on Middle East tensions, modest USD pullback",
-      "summary": "Gold (XAU/USD) catches fresh bids following the previous day's two-way price swings and trades with modest gains above the $5,350 level, during the Asian session on Tuesday....",
-      "source": "FXStreet",
-      "url": "https://www.fxstreet.com/news/gold-rises-for-fifth-day-on-middle-east-tensions-modest-usd-pullback-202603030345",
-      "publishTime": "2026-03-03T03:45:33.000Z",
-      "category": "黄金"
+      "id": "vp0o6rsl1bq",
+      "title": "一条内裤的“远征”： 巴迪高试图用“0手触”撬动一次性内裤的信任缺口 |  早期项目",
+      "summary": "近两年，一次性内裤在国内市场进入高速增长期。 在旅行出游频繁、“懒人经济”持续升温的背景下，这一原本存在感不高的品类，正从边缘产品走向大众消费的视野。除户外、差旅等高频使用场景外，一次性内裤也逐渐渗透至产后恢复、医疗护理等领域，需求不断外扩，带动纺织服饰、母婴等赛道品牌加速入场，形成一股新的消费热潮...",
+      "source": "36氪",
+      "url": "https://36kr.com/p/3697641252646531?f=rss",
+      "publishTime": "2026-03-03T02:16:44.000Z",
+      "category": "黄金",
+      "image": "https://img.36krcdn.com/hsossms/20260303/v2_0e6ce2621a024bf2a6de489239c603f4@6208701_oswg82187oswg845oswg569_img_jpg?x-oss-process=image/quality,q_100/format,jpg/interlace,1"
     },
     {
-      "id": "uqkpujoy7nl",
-      "title": "USD/JPY Price Forecast: Holds onto gains near monthly high above 157.00",
-      "summary": "The USD/JPY pair ticks down to near 157.25 during the Asian trading session on Tuesday, but is still close to its over-a-month high of 157.75 posted on Monday....",
-      "source": "FXStreet",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-holds-onto-gains-near-monthly-high-above-15700-202603030315",
-      "publishTime": "2026-03-03T03:15:36.000Z",
-      "category": "股市"
+      "id": "ybv8z7a0f88",
+      "title": "8点1氪丨椰树集团再陷擦边营销风波被约谈；电影难看20分钟内可退款40%，一影院试行“观影后悔权”；中欧航线票价暴涨",
+      "summary": "今日热点导览 伊朗称霍尔木兹海峡已关闭： “不会让一滴石油流出” 雷军：小米机器人已在汽车工厂实习，未来5年大批人形机器人进厂 亚马逊在阿联酋数据中心遭撞击起火 多家金店暂停投资金条销售 北京银行贵金属业务出现BUG BOSS直聘称网传伊朗急招炮兵照片系P图 TOP3大新闻 海口市监局回应椰树低俗广...",
+      "source": "36氪",
+      "url": "https://36kr.com/p/3706462657245318?f=rss",
+      "publishTime": "2026-03-03T00:11:42.000Z",
+      "category": "黄金",
+      "image": null
     },
     {
-      "id": "ug7v3sr16a",
-      "title": "MongoDB’s stock sinks after earnings, signaling more tough times for the software sector",
-      "summary": "A “planned” transition involving the exits of two sales leaders is also rattling investors....",
-      "source": "MarketWatch",
-      "url": "https://www.marketwatch.com/story/mongodbs-stock-sinks-after-earnings-signaling-more-tough-times-for-the-software-sector-5dd37daa?mod=mw_rss_topstories",
-      "publishTime": "2026-03-03T02:23:00.000Z",
-      "category": "股市"
+      "id": "vkvu0ajtbk",
+      "title": "专访资深公关品牌专家吴猛:情绪传播时代企业公关的情感叙事与长效信任构建",
+      "summary": "公关专家吴猛 在媒介化社会深度演进、社交媒体重构传播生态的当下，情绪传播已成为当前舆论场的一个核心表征，传统以事实为核心的公关范式开始向“事实与情绪并重”的方向发展。情绪传播时代，企业公关如何重构情感叙事、搭建与公众的情感共振桥梁、实现品牌信任的长效构建？带着这些问题，我们专访了资深公关品牌专家吴猛...",
+      "source": "36氪",
+      "url": "https://36kr.com/p/3705917499601285?f=rss",
+      "publishTime": "2026-03-02T14:54:53.000Z",
+      "category": "黄金",
+      "image": "https://img.36krcdn.com/hsossms/20260302/v2_e7681fa73cdb4f64861cb12bf7f4099a@1770672271_oswg103773oswg605oswg766_img_jpg?x-oss-process=image/quality,q_100/format,jpg/interlace,1"
     },
     {
-      "id": "o0on3bvapd",
-      "title": "NZD/USD edges higher to mid-0.5900s amid USD downtick; upside potential seems limited",
-      "summary": "The NZD/USD pair edges higher during the Asian session on Tuesday, though it lacks bullish conviction and remains within striking distance of over a five-week low, touched the prev...",
-      "source": "FXStreet",
-      "url": "https://www.fxstreet.com/news/nzd-usd-edges-higher-to-mid-05900s-amid-usd-downtick-upside-potential-seems-limited-202603030156",
-      "publishTime": "2026-03-03T01:56:38.000Z",
-      "category": "股市"
+      "id": "7r07h9kqegv",
+      "title": "2026 年 2 月 Steam 统计显示简体中文用户占逾半数份额",
+      "summary": "Valve 公布了 2026 年 2 月的 Steam 硬件和软件调查。数据显示了一个异常：简体中文用户出现爆炸式增长，单月增长 30.74% 至 54.60%，英文用户减少 14.74% 至 22.27%。另一个异常是 Windows 11 下降 10.43% 占 56.28%，64 位 Wind...",
+      "source": "Solidot",
+      "url": "https://www.solidot.org/story?sid=83657",
+      "publishTime": "2026-03-02T09:52:26.000Z",
+      "category": "股市",
+      "image": null
     },
     {
-      "id": "t17mrgz6n0f",
-      "title": "SoFi’s stock rises as CEO Anthony Noto reacts to recent selloff with a $1 million purchase",
-      "summary": "Noto, who already owns a SoFi stake worth about $215 million on paper, has been known to buy the dip before....",
-      "source": "MarketWatch",
-      "url": "https://www.marketwatch.com/story/sofis-stock-rises-as-ceo-anthony-noto-reacts-to-recent-selloff-with-a-1-million-purchase-d03ba5b6?mod=mw_rss_topstories",
-      "publishTime": "2026-03-03T01:28:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "bzglbxr5isg",
-      "title": "‘I don’t earn enough to support us and our baby’: My unemployed husband lost $22,000 trading sports cards. What now?",
-      "summary": "“I intervened, shut the business down and got him into therapy and support for gambling-type behaviors.”...",
-      "source": "MarketWatch",
-      "url": "https://www.marketwatch.com/story/i-dont-earn-enough-to-support-us-and-our-baby-my-husband-is-unemployed-and-lost-22-000-trading-sports-cards-what-now-200c1438?mod=mw_rss_topstories",
-      "publishTime": "2026-03-03T00:00:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "mv0mo8j7eza",
-      "title": "Chevron’s stock surges to a record as U.S.-Israeli attacks on Iran spark an oil rally",
-      "summary": "Investors leaned onto U.S. energy stocks on Monday, with the widening conflict in the Middle East boosting shares of major U.S. exploration and production and integrated-energy com...",
-      "source": "MarketWatch",
-      "url": "https://www.marketwatch.com/story/chevrons-stock-surges-toward-a-record-as-u-s-israeli-attacks-on-iran-spark-an-oil-rally-c6283fd5?mod=mw_rss_topstories",
-      "publishTime": "2026-03-02T22:58:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "sj20q3jvwah",
-      "title": "The smartest money moves to make as the Iran conflict rattles markets",
-      "summary": "You may have opportunities to optimize for short-term volatility, financial planners told MarketWatch....",
-      "source": "MarketWatch",
-      "url": "https://www.marketwatch.com/story/the-smartest-money-moves-to-make-as-the-iran-conflict-rattles-markets-d8e57ef3?mod=mw_rss_topstories",
-      "publishTime": "2026-03-02T22:35:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "n8bb70pp0ud",
-      "title": "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek",
-      "summary": "U.S. stocks were mostly lower, with the Nasdaq leading declines as makers of AI infrastructure suffered steep falls, many in the double digits. Nvidia was down 16%....",
-      "source": "WSJ Markets",
-      "url": "https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main",
-      "publishTime": "2025-01-27T19:26:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "pai39ss9leb",
-      "title": "Comex Gold, Silver Settle Lower",
-      "summary": "Gold settled 1.4% lower, down two of the past three sessions, and silver fell 2.5%, down three of the past four sessions....",
-      "source": "WSJ Markets",
-      "url": "https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main",
-      "publishTime": "2025-01-27T19:01:00.000Z",
-      "category": "黄金"
-    },
-    {
-      "id": "mfd11uikbon",
-      "title": "Financial Services Roundup: Market Talk",
-      "summary": "Gain insight on Experian, SoFi Technologies and more in the latest Market Talks covering Financial Services....",
-      "source": "WSJ Markets",
-      "url": "https://www.wsj.com/articles/financial-services-roundup-market-talk-94f52cba?mod=rss_markets_main",
-      "publishTime": "2025-01-27T17:27:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "w65hgl4xml8",
-      "title": "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens",
-      "summary": "The Yen and Swiss Franc were stronger against the dollar as investors sought safe havens after Chinese start-up DeepSeek’s new AI model hit U.S. tech stocks....",
-      "source": "WSJ Markets",
-      "url": "https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main",
-      "publishTime": "2025-01-27T14:55:00.000Z",
-      "category": "股市"
-    },
-    {
-      "id": "sr4dlyv1jk",
-      "title": "Building-Products Distributor QXO Launches Hostile Bid for Beacon",
-      "summary": "QXO is taking its offer directly to shareholders after being rebuffed on several occasions....",
-      "source": "WSJ Markets",
-      "url": "https://www.wsj.com/articles/building-products-distributor-qxo-launching-hostile-bid-for-beacon-de024410?mod=rss_markets_main",
-      "publishTime": "2025-01-27T13:28:00.000Z",
-      "category": "股市"
+      "id": "wsb3os9wwr",
+      "title": "氪星晚报｜马斯克称第二代星链卫星将提供5G速度的太空互联网服务；调整住宿税，日本京都预计增收132亿日元；卢伟冰：小米今年即将发布全新的机器人产品",
+      "summary": "大公司： 智元机器人等在安徽成立华智天成科技新公司 36氪获悉，爱企查App显示，近日，安徽华智天成科技有限公司成立，法定代表人为肖智成，注册资本约1176万元人民币，经营范围包括计算机软硬件及辅助设备零售、计算机软硬件及辅助设备批发、软件销售、通信设备销售等。股东信息显示，该公司由智元机器人关联公...",
+      "source": "36氪",
+      "url": "https://36kr.com/p/3705604996952453?f=rss",
+      "publishTime": "2026-03-02T09:47:01.000Z",
+      "category": "股市",
+      "image": null
     }
   ]
 }
