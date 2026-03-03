@@ -1,222 +1,145 @@
 {
-  "lastUpdate": "2026-03-03T04:30:58.112Z",
-  "totalCount": 24,
+  "lastUpdate": "2026-03-03T04:44:48.122Z",
+  "totalCount": 15,
+  "stats": {
+    "gold": 2,
+    "stock": 13
+  },
   "news": [
     {
-      "id": "rujy2x3v8oc",
-      "title": "前小米高管创业机器人，用“爆品逻辑”做工业通用具身智能",
-      "summary": "文｜富充\n编辑｜苏建勋\n小雨智造创始人乔忠良身上，有着“小米系”具身智能创业者的典型特质：善于寻找落地场景，商业化思路很务实。\n2023年2月成立起，小雨智造就瞄准“工业通用具身智能”的目标。焊接机器人作为“沿途下蛋”的第一款产品，在2025年第四季度进入客户产线。\n2010年，北航计算机系硕士毕业后，乔忠良加入创业阶段的小米，成为小米首位应届生；离职时，他已经担任小米MIUI研发负责人5年，创下...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3706592101691525?f=rss",
-      "publishTime": "2026-03-03T02:25:34.000Z",
-      "category": "科技"
+      "id": "qjb2yszvm2",
+      "title": "Dow Jones And U.S. Stocks Outlook: War Begins, Wall Street Unfazed (For Now!)",
+      "summary": "暂无摘要...",
+      "source": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4877417-dow-jones-us-stocks-outlook-war-begins-wall-street-unfazed-for-now?source=feed_all_articles",
+      "publishTime": "2026-03-03T04:40:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "u58pgvfaoik",
-      "title": "一条内裤的“远征”： 巴迪高试图用“0手触”撬动一次性内裤的信任缺口 |  早期项目",
-      "summary": "近两年，一次性内裤在国内市场进入高速增长期。\n在旅行出游频繁、“懒人经济”持续升温的背景下，这一原本存在感不高的品类，正从边缘产品走向大众消费的视野。除户外、差旅等高频使用场景外，一次性内裤也逐渐渗透至产后恢复、医疗护理等领域，需求不断外扩，带动纺织服饰、母婴等赛道品牌加速入场，形成一股新的消费热潮。相关数据显示，2022—2024年，我国一次性内裤市场增速超过200%，整体规模已迈入百亿行列。\n...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3697641252646531?f=rss",
-      "publishTime": "2026-03-03T02:16:44.000Z",
-      "category": "科技"
+      "id": "bfdkya9u34d",
+      "title": "Occidental Petroleum: Strong Execution, But The Easy Upside Is Gone (Rating Downgrade)",
+      "summary": "暂无摘要...",
+      "source": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4877411-occidental-petroleum-strong-execution-but-the-easy-upside-is-gone-rating-downgrade?source=feed_all_articles",
+      "publishTime": "2026-03-03T04:17:54.000Z",
+      "category": "股市"
     },
     {
-      "id": "zz2y1mbvxmn",
-      "title": "「PureblueAI清蓝」完成数千万元天使轮融资，发布首款AI口碑营销数字员工",
-      "summary": "作者 | 邓咏仪\n编辑 | 苏建勋\n36氪获悉，国内AI营销技术服务公司「PureblueAI清蓝」正式宣布完成数千万元人民币天使轮融资。本轮融资由祥峰中国（Vertex China）领投，老股东英诺基金及一村淞灵、36氪跟投。\n本轮融资资金，将主要用于新一代产品开发与技术迭代、全行业生态拓展及业务布局，同时将持续携手投资方与生态伙伴，打造 AI 口碑营销领域的标杆性解决方案，助力更多企业在 AI...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3705907852800136?f=rss",
-      "publishTime": "2026-03-03T01:00:26.000Z",
-      "category": "科技"
+      "id": "qcc0pzuptn",
+      "title": "Gold rises for fifth day on Middle East tensions, modest USD pullback",
+      "summary": "Gold (XAU/USD) catches fresh bids following the previous day's two-way price swings and trades with modest gains above the $5,350 level, during the Asian session on Tuesday....",
+      "source": "FXStreet",
+      "url": "https://www.fxstreet.com/news/gold-rises-for-fifth-day-on-middle-east-tensions-modest-usd-pullback-202603030345",
+      "publishTime": "2026-03-03T03:45:33.000Z",
+      "category": "黄金"
     },
     {
-      "id": "gfmua58o3je",
-      "title": "8点1氪丨椰树集团再陷擦边营销风波被约谈；电影难看20分钟内可退款40%，一影院试行“观影后悔权”；中欧航线票价暴涨",
-      "summary": "今日热点导览\n伊朗称霍尔木兹海峡已关闭： “不会让一滴石油流出”\n雷军：小米机器人已在汽车工厂实习，未来5年大批人形机器人进厂\n亚马逊在阿联酋数据中心遭撞击起火\n多家金店暂停投资金条销售\n北京银行贵金属业务出现BUG\nBOSS直聘称网传伊朗急招炮兵照片系P图\nTOP3大新闻\n海口市监局回应椰树低俗广告，已约谈企业\n近日，海南椰树集团因工厂参观区内悬挂涉嫌低俗内容的宣传广告，再次被推上舆论风口浪尖。...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3706462657245318?f=rss",
-      "publishTime": "2026-03-03T00:11:42.000Z",
-      "category": "科技"
+      "id": "uqkpujoy7nl",
+      "title": "USD/JPY Price Forecast: Holds onto gains near monthly high above 157.00",
+      "summary": "The USD/JPY pair ticks down to near 157.25 during the Asian trading session on Tuesday, but is still close to its over-a-month high of 157.75 posted on Monday....",
+      "source": "FXStreet",
+      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-holds-onto-gains-near-monthly-high-above-15700-202603030315",
+      "publishTime": "2026-03-03T03:15:36.000Z",
+      "category": "股市"
     },
     {
-      "id": "hitqw1n01nw",
-      "title": "专访资深公关品牌专家吴猛:情绪传播时代企业公关的情感叙事与长效信任构建",
-      "summary": "公关专家吴猛\n在媒介化社会深度演进、社交媒体重构传播生态的当下，情绪传播已成为当前舆论场的一个核心表征，传统以事实为核心的公关范式开始向“事实与情绪并重”的方向发展。情绪传播时代，企业公关如何重构情感叙事、搭建与公众的情感共振桥梁、实现品牌信任的长效构建？带着这些问题，我们专访了资深公关品牌专家吴猛。\n\n  \n吴猛拥有丰富的公共关系和品牌管理经验，并先后在联想集团、蓝色光标、京东集团担任高级管理职...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3705917499601285?f=rss",
-      "publishTime": "2026-03-02T14:54:53.000Z",
-      "category": "科技"
+      "id": "ug7v3sr16a",
+      "title": "MongoDB’s stock sinks after earnings, signaling more tough times for the software sector",
+      "summary": "A “planned” transition involving the exits of two sales leaders is also rattling investors....",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/story/mongodbs-stock-sinks-after-earnings-signaling-more-tough-times-for-the-software-sector-5dd37daa?mod=mw_rss_topstories",
+      "publishTime": "2026-03-03T02:23:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "qis0f9sycbm",
-      "title": "NIST 限制外国科学家进入其实验室",
-      "summary": "过去几周在美国国家标准与技术研究院（NIST）工作的数百名外国科学家被限制进入实验室，除非有联邦雇员陪同，否则不得在晚上和周末进入实验室。部分国家的科学家最早将在本月底失去访问权限。拟议中的规则尚无书面版本，仅通过会议传达。最新变化是基于 NIST 在 2025 年更新的研究安全规则，它将中国、俄罗斯、伊朗、朝鲜、古巴、委内瑞拉和叙利亚的科学家视为“高风险”人群，中国等国的研究人员已被告知，他们的...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83661",
-      "publishTime": "2026-03-02T14:31:23.000Z",
-      "category": "科技"
+      "id": "o0on3bvapd",
+      "title": "NZD/USD edges higher to mid-0.5900s amid USD downtick; upside potential seems limited",
+      "summary": "The NZD/USD pair edges higher during the Asian session on Tuesday, though it lacks bullish conviction and remains within striking distance of over a five-week low, touched the prev...",
+      "source": "FXStreet",
+      "url": "https://www.fxstreet.com/news/nzd-usd-edges-higher-to-mid-05900s-amid-usd-downtick-upside-potential-seems-limited-202603030156",
+      "publishTime": "2026-03-03T01:56:38.000Z",
+      "category": "股市"
     },
     {
-      "id": "ihidpegc5ks",
-      "title": "亚马逊 AWS 中东数据中心遭遇火灾和断电",
-      "summary": "亚马逊 AWS 披露其位于中东数据中心的一处遭遇断电一处遭遇“物体”撞击后起火。它没有披露是什么东西撞击了数据中心设施。AWS 表示它位于阿联酋的一个数据中心于 7:30 a.m. ET 遭遇撞击，撞击产生了火花和火灾，消防部门在灭火过程中切断了数据中心和发电机的电源。...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83660",
-      "publishTime": "2026-03-02T13:50:20.000Z",
-      "category": "科技"
+      "id": "t17mrgz6n0f",
+      "title": "SoFi’s stock rises as CEO Anthony Noto reacts to recent selloff with a $1 million purchase",
+      "summary": "Noto, who already owns a SoFi stake worth about $215 million on paper, has been known to buy the dip before....",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/story/sofis-stock-rises-as-ceo-anthony-noto-reacts-to-recent-selloff-with-a-1-million-purchase-d03ba5b6?mod=mw_rss_topstories",
+      "publishTime": "2026-03-03T01:28:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "kb7qkp098b",
-      "title": "为何女性的疼痛持续时间更长",
-      "summary": "医生通常认为免疫系统会通过引起炎症加剧疼痛，而炎症通常表现为红肿。最新研究显示，免疫细胞在帮助缓解疼痛方面也可能至关重要，男女之间的免疫细胞功能差异可能会影响疼痛消退的速度。研究人员调查了名为 IL-10（interleukin-10）的分子，测量了小鼠皮肤损伤后和交通事故急诊伤者体内的 IL-10 水平，发现 IL-10 的作用不仅是缓解炎症，还能直接与疼痛感受神经细胞通信将其关闭。也就是 IL...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83659",
-      "publishTime": "2026-03-02T12:54:32.000Z",
-      "category": "科技"
+      "id": "bzglbxr5isg",
+      "title": "‘I don’t earn enough to support us and our baby’: My unemployed husband lost $22,000 trading sports cards. What now?",
+      "summary": "“I intervened, shut the business down and got him into therapy and support for gambling-type behaviors.”...",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/story/i-dont-earn-enough-to-support-us-and-our-baby-my-husband-is-unemployed-and-lost-22-000-trading-sports-cards-what-now-200c1438?mod=mw_rss_topstories",
+      "publishTime": "2026-03-03T00:00:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "jffxbbim5f7",
-      "title": "小鼠研究发现器官同步衰老但存在性别差异",
-      "summary": "研究人员构建了迄今最详尽的图谱，展示了衰老如何影响21种哺乳动物组织中的数千种细胞亚型。他们通过分析不同年龄段小鼠的近 700 万个单细胞，确定了随时间推移最易受损的细胞，以及促使其衰老的因素。研究人员对 32 只小鼠21个器官中提取的数百万个单细胞进行分析。这些小鼠处于 3 个年龄段：1 个月（年轻成年小鼠）、5 个月（中年小鼠）、21 个月（老年小鼠）。研究人员识别出了超过 1800 种不同的...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83658",
-      "publishTime": "2026-03-02T12:01:56.000Z",
-      "category": "科技"
+      "id": "mv0mo8j7eza",
+      "title": "Chevron’s stock surges to a record as U.S.-Israeli attacks on Iran spark an oil rally",
+      "summary": "Investors leaned onto U.S. energy stocks on Monday, with the widening conflict in the Middle East boosting shares of major U.S. exploration and production and integrated-energy com...",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/story/chevrons-stock-surges-toward-a-record-as-u-s-israeli-attacks-on-iran-spark-an-oil-rally-c6283fd5?mod=mw_rss_topstories",
+      "publishTime": "2026-03-02T22:58:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "sr8utd93xun",
-      "title": "2026 年 2 月 Steam 统计显示简体中文用户占逾半数份额",
-      "summary": "Valve 公布了 2026 年 2 月的 Steam 硬件和软件调查。数据显示了一个异常：简体中文用户出现爆炸式增长，单月增长 30.74% 至 54.60%，英文用户减少 14.74% 至 22.27%。另一个异常是 Windows 11 下降 10.43% 占 56.28%，64 位 Windows 10 增长 12.46% 至 40.25%。异常现象的一个解释也许是 2 月中旬是大部分简体...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83657",
-      "publishTime": "2026-03-02T09:52:26.000Z",
-      "category": "科技"
+      "id": "sj20q3jvwah",
+      "title": "The smartest money moves to make as the Iran conflict rattles markets",
+      "summary": "You may have opportunities to optimize for short-term volatility, financial planners told MarketWatch....",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/story/the-smartest-money-moves-to-make-as-the-iran-conflict-rattles-markets-d8e57ef3?mod=mw_rss_topstories",
+      "publishTime": "2026-03-02T22:35:00.000Z",
+      "category": "股市"
     },
     {
-      "id": "i4izbodmo4g",
-      "title": "氪星晚报｜马斯克称第二代星链卫星将提供5G速度的太空互联网服务；调整住宿税，日本京都预计增收132亿日元；卢伟冰：小米今年即将发布全新的机器人产品",
-      "summary": "大公司：\n智元机器人等在安徽成立华智天成科技新公司\n36氪获悉，爱企查App显示，近日，安徽华智天成科技有限公司成立，法定代表人为肖智成，注册资本约1176万元人民币，经营范围包括计算机软硬件及辅助设备零售、计算机软硬件及辅助设备批发、软件销售、通信设备销售等。股东信息显示，该公司由智元机器人关联公司智元创新科技股份有限公司、天水华天电子集团股份有限公司等共同持股。\n海螺新型建材有限公司在肥东成立...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3705604996952453?f=rss",
-      "publishTime": "2026-03-02T09:47:01.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "539fk0rebly",
-      "title": "摩托罗拉手机宣布与 GrapheneOS 合作",
-      "summary": "联想旗下的摩托罗拉手机宣布与 Android 安全加固社区发行版项目 GrapheneOS 展开合作。GrapheneOS 此前主要支持 Google 的 Pixel 系列手机，但摩托罗拉哪些型号的手机会支持 GrapheneOS 官方新闻稿没有给出信息，只是表示未来会公布。摩托罗拉同时推出了企业级分析平台 Moto Analytics，Moto Secure 支持私密图像数据功能，启用后会自动从...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83656",
-      "publishTime": "2026-03-02T08:35:09.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "y4s1corivp9",
-      "title": "成都六类人才可享租房补贴，最高补贴比例达100%",
-      "summary": "2月28日，成都市住房和城乡建设局等四部门联合发布《成都市人才优租行动实施细则》，针对符合条件的六类市级人才，给予相应的人才补贴，补贴比例从50%到100%不等，而补贴面积最高为50平方米。\n该《细则》自2026年4月1日起实施，有效期5年。\n从人才惠及范围看，首先是在成都市行政区域范围租住保障性租赁住房（不含纳入保障性租赁住房管理的居民自有住房）的市级A、B、C、D、E类人才。\n另外，还有人才认...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3705502776652168?f=rss",
-      "publishTime": "2026-03-02T08:21:42.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "p7jvy213c9",
-      "title": "破局能源焦虑：正泰安能定义户用光伏下半场",
-      "summary": "“十五五”规划建议中，“加快建设新型能源体系”“加快形成绿色生产生活方式”已被确立为核心战略目标。相较“十四五”规划建议，这是首次对能源和电力系统做出具体的规划。\n与此同时，产业侧也开始行动。根据国家电网公布的信息，“十五五”期间其固定资产投资预计将高达4万亿元，较“十四五”时期大幅跃升40%。\n政策与资金的交汇，意味着构建涵盖“源、网、荷、储”的综合性电力体系，已经成为国家产业发展的核心诉求。对...",
-      "source": "36氪",
-      "url": "https://36kr.com/p/3705242771845249?f=rss",
-      "publishTime": "2026-03-02T08:06:04.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "nf1557x6cbc",
-      "title": "古代天文学著作发现伽利略的手写笔记",
-      "summary": "历史学家 Ivan Malara 在意大利佛罗伦萨国家中央图书馆翻阅 16 世纪印刷的天文著作——托勒密的《天文学大成》。该书的地心说模型统治西方天文学长达 14 个世纪。他在翻阅时注意到了书上留下的大量批注，其笔迹非常类似意大利 Tuscan 天文学家伽利略。这一发现为天文学从地心说到日心说的转变提供了新的见解。伽利略的笔记可能写于 1590 年左右，也就是在他使用望远镜观测月球和木星前 20 ...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83654",
-      "publishTime": "2026-03-02T07:59:58.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "mao6pkij7jm",
-      "title": "长期海洋暖化会导致海洋生物数量锐减",
-      "summary": "根据发表在《Nature Ecology & Evolution》期刊上的一项研究，长期海洋变暖会导致海洋生物数量锐减，每十年升温 0.1C，鱼类数量会下降 7.2%。研究人员分析了1993-2021 年间北半球 33000 个鱼类种群的逐年变化，区分海床升温的十年均速与海洋热浪等短期变化的影响。他们发现长期升温导致的生物量下降幅度在一年内最高达到 19.8%。海洋生物易受化石燃料污染导致的大气温...",
-      "source": "Solidot",
-      "url": "https://www.solidot.org/story?sid=83653",
-      "publishTime": "2026-03-02T07:16:41.000Z",
-      "category": "科技"
-    },
-    {
-      "id": "cgxmhg1pe0m",
+      "id": "n8bb70pp0ud",
       "title": "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek",
       "summary": "U.S. stocks were mostly lower, with the Nasdaq leading declines as makers of AI infrastructure suffered steep falls, many in the double digits. Nvidia was down 16%....",
-      "source": "WSJ  Markets",
+      "source": "WSJ Markets",
       "url": "https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main",
       "publishTime": "2025-01-27T19:26:00.000Z",
-      "category": "市场"
+      "category": "股市"
     },
     {
-      "id": "61luy5rjcvw",
+      "id": "pai39ss9leb",
       "title": "Comex Gold, Silver Settle Lower",
       "summary": "Gold settled 1.4% lower, down two of the past three sessions, and silver fell 2.5%, down three of the past four sessions....",
-      "source": "WSJ  Markets",
+      "source": "WSJ Markets",
       "url": "https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main",
       "publishTime": "2025-01-27T19:01:00.000Z",
-      "category": "市场"
+      "category": "黄金"
     },
     {
-      "id": "ral4t9rcw5q",
-      "title": "DeepSeek Won't Sink U.S. AI Titans",
-      "summary": "Panic fueling the selloff of Nvidia, Broadcom and other tech giants is overblown....",
-      "source": "WSJ  Markets",
-      "url": "https://www.wsj.com/articles/deepseek-us-ai-stocks-nvidia-broadcom-6cdfae81?mod=rss_markets_main",
-      "publishTime": "2025-01-27T18:12:00.000Z",
-      "category": "市场"
-    },
-    {
-      "id": "xt09yc6ybs",
+      "id": "mfd11uikbon",
       "title": "Financial Services Roundup: Market Talk",
       "summary": "Gain insight on Experian, SoFi Technologies and more in the latest Market Talks covering Financial Services....",
-      "source": "WSJ  Markets",
+      "source": "WSJ Markets",
       "url": "https://www.wsj.com/articles/financial-services-roundup-market-talk-94f52cba?mod=rss_markets_main",
       "publishTime": "2025-01-27T17:27:00.000Z",
-      "category": "市场"
+      "category": "股市"
     },
     {
-      "id": "482gx1ermk1",
-      "title": "Arabica Coffee Prices Hit Record on U.S., Colombia Tariff Spat",
-      "summary": "Arabica coffee prices hit a record level, as traders digested the withdrawal of President Trump’s threats to impose tariffs and economic sanctions on Colombia....",
-      "source": "WSJ  Markets",
-      "url": "https://www.wsj.com/articles/arabica-coffee-prices-hit-new-high-on-u-s-colombia-tariff-spat-582446fe?mod=rss_markets_main",
-      "publishTime": "2025-01-27T17:20:00.000Z",
-      "category": "市场"
-    },
-    {
-      "id": "7065s3f2pdn",
+      "id": "w65hgl4xml8",
       "title": "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens",
       "summary": "The Yen and Swiss Franc were stronger against the dollar as investors sought safe havens after Chinese start-up DeepSeek’s new AI model hit U.S. tech stocks....",
-      "source": "WSJ  Markets",
+      "source": "WSJ Markets",
       "url": "https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main",
       "publishTime": "2025-01-27T14:55:00.000Z",
-      "category": "市场"
+      "category": "股市"
     },
     {
-      "id": "hhsk92wfl3a",
-      "title": "Natural Gas Falls on Shifting Weather Forecasts",
-      "summary": "U.S. natural gas futures fell after weekend updates took some of the chill out of early February weather forecasts....",
-      "source": "WSJ  Markets",
-      "url": "https://www.wsj.com/articles/u-s-natural-gas-futures-fall-on-shifting-weather-forecasts-1ef3e457?mod=rss_markets_main",
-      "publishTime": "2025-01-27T14:05:00.000Z",
-      "category": "市场"
-    },
-    {
-      "id": "mvj15txd04e",
+      "id": "sr4dlyv1jk",
       "title": "Building-Products Distributor QXO Launches Hostile Bid for Beacon",
       "summary": "QXO is taking its offer directly to shareholders after being rebuffed on several occasions....",
-      "source": "WSJ  Markets",
+      "source": "WSJ Markets",
       "url": "https://www.wsj.com/articles/building-products-distributor-qxo-launching-hostile-bid-for-beacon-de024410?mod=rss_markets_main",
       "publishTime": "2025-01-27T13:28:00.000Z",
-      "category": "市场"
+      "category": "股市"
     }
   ]
 }
