@@ -4,58 +4,70 @@ const path = require('path');
 
 const rssParser = new Parser({
   headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-  }
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/rss+xml, application/xml, text/xml'
+  },
+  timeout: 10000
 });
 
-// 可靠的新闻源配置
+// 黄金和股市相关的新闻源
 const NEWS_SOURCES = [
   {
-    name: 'Reuters 路透',
-    category: '国际',
-    url: 'https://www.reutersagency.com/feed/?taxonomy=markets&post_type=reuters-best'
-  },
-  {
-    name: 'WSJ  Markets',
-    category: '市场',
+    name: 'WSJ Markets',
     url: 'https://feeds.a.dj.com/rss/RSSMarketsMain.xml'
   },
   {
-    name: 'CNBC Finance',
-    category: '市场',
-    url: 'https://www.cnbc.com/id/19789612/device/rss/rss.xml'
+    name: 'Investing.com',
+    url: 'https://www.investing.com/rss/news.rss'
   },
   {
-    name: 'Bloomberg',
-    category: '宏观',
-    url: 'https://feeds.bloomberg.com/markets/news.rss'
+    name: 'FXStreet',
+    url: 'https://www.fxstreet.com/rss/news'
   },
   {
-    name: 'FT Markets',
-    category: '市场',
-    url: 'https://www.ft.com/markets?format=rss'
+    name: 'MarketWatch',
+    url: 'http://feeds.marketwatch.com/marketwatch/topstories'
   },
   {
-    name: '36氪',
-    category: '科技',
-    url: 'https://36kr.com/feed'
+    name: 'Seeking Alpha',
+    url: 'https://seekingalpha.com/feed.xml'
   },
   {
-    name: 'Solidot',
-    category: '科技',
-    url: 'https://www.solidot.org/index.rss'
+    name: '华尔街见闻',
+    url: 'https://wallstreetcn.com/rss.xml'
   }
 ];
 
-// 简单的关键词分类
+// 关键词分类 - 只保留黄金和股市
+const KEYWORDS = {
+  黄金: ['gold', 'xau', '贵金属', 'precious metal', 'bullion', 'gold price', '金价', '黄金'],
+  股市: ['stock', 'equity', 'share', 'market', '指数', '大盘', 'a股', '港股', '美股', 'nasdaq', 'dow', 's&p', 'sp500', '股市', '股票', '涨停', '跌停', '牛市', '熊市']
+};
+
 function categorize(title, content = '') {
   const text = (title + ' ' + content).toLowerCase();
-  if (text.includes('stock') || text.includes('share') || text.includes('equity') || text.includes('股')) return '股市';
-  if (text.includes('crypto') || text.includes('bitcoin') || text.includes('blockchain') || text.includes('币')) return '科技';
-  if (text.includes('realestate') || text.includes('property') || text.includes('housing') || text.includes('房')) return '房产';
-  if (text.includes('fed') || text.includes('interest rate') || text.includes('inflation') || text.includes('gdp') || text.includes('经济')) return '宏观';
-  if (text.includes('tech') || text.includes('ai') || text.includes('artificial') || text.includes('科技')) return '科技';
-  return '市场';
+  
+  // 检查黄金关键词
+  for (const keyword of KEYWORDS.黄金) {
+    if (text.includes(keyword.toLowerCase())) {
+      return '黄金';
+    }
+  }
+  
+  // 检查股市关键词
+  for (const keyword of KEYWORDS.股市) {
+    if (text.includes(keyword.toLowerCase())) {
+      return '股市';
+    }
+  }
+  
+  // 默认分类（基于内容判断）
+  if (text.includes('fed') || text.includes('federal reserve') || text.includes('interest rate') || 
+      text.includes('gdp') || text.includes('inflation') || text.includes('经济') || text.includes('央行')) {
+    return '股市'; // 宏观经济新闻归为股市
+  }
+  
+  return null; // 不属于黄金或股市，过滤掉
 }
 
 function generateId() {
@@ -67,33 +79,44 @@ async function fetchFromSource(source) {
     console.log(`📡 正在抓取: ${source.name}`);
     const feed = await rssParser.parseURL(source.url);
     
-    return feed.items.slice(0, 8).map(item => ({
-      id: generateId(),
-      title: item.title?.trim() || '无标题',
-      summary: item.contentSnippet?.substring(0, 200) + '...' || item.content?.substring(0, 200) + '...' || '暂无摘要',
-      source: source.name,
-      url: item.link || item.guid,
-      publishTime: item.isoDate || new Date().toISOString(),
-      category: source.category || categorize(item.title, item.contentSnippet)
-    }));
+    const items = [];
+    for (const item of feed.items.slice(0, 10)) {
+      const category = categorize(item.title || '', item.contentSnippet || item.content || '');
+      
+      // 只保留黄金和股市分类的新闻
+      if (!category) continue;
+      
+      items.push({
+        id: generateId(),
+        title: item.title?.trim() || '无标题',
+        summary: (item.contentSnippet || item.content || '暂无摘要').substring(0, 180) + '...',
+        source: source.name,
+        url: item.link || item.guid,
+        publishTime: item.isoDate || item.pubDate || new Date().toISOString(),
+        category: category
+      });
+    }
+    
+    console.log(`  ✅ ${source.name}: ${items.length} 条相关新闻`);
+    return items;
   } catch (error) {
-    console.error(`❌ 抓取失败 ${source.name}:`, error.message);
+    console.error(`  ❌ 抓取失败 ${source.name}:`, error.message);
     return [];
   }
 }
 
 async function fetchAllNews() {
-  console.log('🚀 开始抓取财经新闻...\n');
+  console.log('🚀 开始抓取黄金 & 股市新闻...\n');
   
   const allNews = [];
   
   for (const source of NEWS_SOURCES) {
     const news = await fetchFromSource(source);
     allNews.push(...news);
-    await new Promise(resolve => setTimeout(resolve, 1000)); // 礼貌延迟
+    await new Promise(resolve => setTimeout(resolve, 800));
   }
   
-  // 去重（基于URL）
+  // 去重
   const seen = new Set();
   const uniqueNews = allNews.filter(item => {
     if (seen.has(item.url)) return false;
@@ -104,12 +127,19 @@ async function fetchAllNews() {
   // 按时间排序
   uniqueNews.sort((a, b) => new Date(b.publishTime) - new Date(a.publishTime));
   
-  console.log(`\n✅ 成功抓取 ${uniqueNews.length} 条新闻`);
+  const goldCount = uniqueNews.filter(n => n.category === '黄金').length;
+  const stockCount = uniqueNews.filter(n => n.category === '股市').length;
+  
+  console.log(`\n✅ 抓取完成`);
+  console.log(`   🥇 黄金: ${goldCount} 条`);
+  console.log(`   📊 股市: ${stockCount} 条`);
+  console.log(`   📰 总计: ${uniqueNews.length} 条`);
   
   return {
     lastUpdate: new Date().toISOString(),
     totalCount: uniqueNews.length,
-    news: uniqueNews.slice(0, 50) // 最多保留50条
+    stats: { gold: goldCount, stock: stockCount },
+    news: uniqueNews.slice(0, 40)
   };
 }
 
@@ -125,46 +155,12 @@ async function main() {
     const outputPath = path.join(dataDir, 'news.json');
     fs.writeFileSync(outputPath, JSON.stringify(newsData, null, 2), 'utf-8');
     
-    console.log(`💾 数据已保存到: ${outputPath}`);
-    
-    // 同时生成一个 HTML 版本用于预览
-    const htmlContent = generateHtml(newsData);
-    const htmlPath = path.join(dataDir, 'news-preview.html');
-    fs.writeFileSync(htmlPath, htmlContent, 'utf-8');
-    
-    console.log(`📄 HTML预览已生成: ${htmlPath}`);
+    console.log(`\n💾 数据已保存: ${outputPath}`);
     
   } catch (error) {
     console.error('❌ 抓取失败:', error);
     process.exit(1);
   }
-}
-
-function generateHtml(data) {
-  const newsList = data.news.map(item => `
-    <div style="border-bottom:1px solid #eee;padding:16px 0;">
-      <span style="background:#2563eb;color:white;padding:2px 8px;border-radius:4px;font-size:12px;">${item.category}</span>
-      <span style="color:#666;font-size:12px;margin-left:8px;">${item.source}</span>
-      <h3 style="margin:8px 0;"><a href="${item.url}" target="_blank">${item.title}</a></h3>
-      <p style="color:#666;font-size:14px;">${item.summary}</p>
-      <time style="color:#999;font-size:12px;">${new Date(item.publishTime).toLocaleString('zh-CN')}</time>
-    </div>
-  `).join('');
-  
-  return `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>财经新闻预览</title>
-  <style>body{font-family:system-ui;max-width:800px;margin:40px auto;padding:20px;}</style>
-</head>
-<body>
-  <h1>📈 每日财经新闻</h1>
-  <p style="color:#666;">最后更新: ${new Date(data.lastUpdate).toLocaleString('zh-CN')}</p>
-  <p>共 ${data.totalCount} 条新闻</p>
-  <div>${newsList}</div>
-</body>
-</html>`;
 }
 
 main();
