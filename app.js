@@ -17,8 +17,101 @@ const yearEl = document.getElementById('year');
 // Initialize
 async function init() {
   yearEl.textContent = new Date().getFullYear();
+  initParticleBackground();
   await loadNews();
   bindEvents();
+}
+
+// 粒子连线背景
+function initParticleBackground() {
+  const canvas = document.getElementById('bgCanvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+  
+  const particles = [];
+  const particleCount = 30;
+  const maxDistance = 150;
+  
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 2 + 0.5;
+    }
+    
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+    }
+    
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(102, 126, 234, 0.5)';
+      ctx.fill();
+    }
+  }
+  
+  // 创建粒子
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+  
+  // 绘制连线
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < maxDistance) {
+          const opacity = (1 - dist / maxDistance) * 0.3;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  
+  let frameCount = 0;
+  function animate() {
+    frameCount++;
+    ctx.clearRect(0, 0, width, height);
+    
+    // 每2帧更新一次，优化性能
+    if (frameCount % 2 === 0) {
+      particles.forEach(p => p.update());
+    }
+    
+    drawConnections();
+    particles.forEach(p => p.draw());
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+  
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
 }
 
 // Load News Data
@@ -59,22 +152,25 @@ function renderNews() {
     return;
   }
   
-  newsGrid.innerHTML = filtered.map((item) => createNewsCard(item)).join('');
+  newsGrid.innerHTML = filtered.map((item, index) => createNewsCard(item, index)).join('');
 }
 
 // Create News Card with Image
-function createNewsCard(item) {
-  const imageHtml = item.image ? `
+function createNewsCard(item, index) {
+  // 如果没有图片，使用随机风景图
+  const imageUrl = item.image || getRandomLandscapeImage();
+  
+  const imageHtml = `
     <div class="card-image">
       <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
-        <img src="${escapeHtml(item.image)}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+        <img src="${escapeHtml(imageUrl)}" alt="" loading="lazy" onerror="this.src='${getRandomLandscapeImage()}'">
       </a>
       <div class="card-image-overlay"></div>
     </div>
-  ` : '';
+  `;
   
   return `
-    <article class="news-card category-${item.category}" data-url="${escapeHtml(item.url)}">
+    <article class="news-card category-${item.category}" data-url="${escapeHtml(item.url)}" style="animation-delay: ${index * 0.08}s">
       ${imageHtml}
       <div class="card-body">
         <div class="card-header">
@@ -96,6 +192,14 @@ function createNewsCard(item) {
       </div>
     </article>
   `;
+}
+
+// 获取随机风景图 - 使用 picsum.photos
+function getRandomLandscapeImage() {
+  const width = 800;
+  const height = 400;
+  const randomId = Math.floor(Math.random() * 1000);
+  return `https://picsum.photos/${width}/${height}?random=${randomId}`;
 }
 
 // Bind Events
