@@ -149,13 +149,15 @@ function renderNews() {
 function createNewsCard(item, index) {
   const imageHtml = item.image ? `
     <div class="card-image">
-      <img src="${escapeHtml(item.image)}" alt="" loading="lazy" onerror="this.style.display='none'">
+      <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+        <img src="${escapeHtml(item.image)}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+      </a>
       <div class="card-image-overlay"></div>
     </div>
   ` : '';
   
   return `
-    <article class="news-card category-${item.category}" style="animation-delay: ${index * 0.08}s">
+    <article class="news-card category-${item.category}" data-url="${escapeHtml(item.url)}" style="animation-delay: ${index * 0.08}s">
       ${imageHtml}
       <div class="card-body">
         <div class="card-header">
@@ -171,7 +173,7 @@ function createNewsCard(item, index) {
         <div class="card-footer">
           <time class="publish-time">${formatTime(item.publishTime)}</time>
           <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="read-more">
-            阅读全文
+            阅读全文 →
           </a>
         </div>
       </div>
@@ -196,6 +198,20 @@ function bindEvents() {
       currentFilter = tab.dataset.filter;
       renderNews();
     });
+  });
+  
+  // Card click handler - open article
+  newsGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('.news-card');
+    if (!card) return;
+    
+    // Don't trigger if clicking on a link directly
+    if (e.target.closest('a')) return;
+    
+    const url = card.dataset.url;
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   });
 }
 
