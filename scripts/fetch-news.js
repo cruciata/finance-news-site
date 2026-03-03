@@ -12,44 +12,54 @@ const rssParser = new Parser({
   }
 });
 
-// 可靠的新闻源
+// 国内可访问的新闻源
 const NEWS_SOURCES = [
   {
     name: '36氪',
-    url: 'https://36kr.com/feed'
+    url: 'https://36kr.com/feed',
+    defaultCategory: '科技'
   },
   {
     name: 'Solidot',
-    url: 'https://www.solidot.org/index.rss'
+    url: 'https://www.solidot.org/index.rss',
+    defaultCategory: '科技'
   },
   {
-    name: 'TechCrunch',
-    url: 'https://techcrunch.com/feed/'
+    name: '虎嗅网',
+    url: 'https://www.huxiu.com/rss/0.xml',
+    defaultCategory: '财经'
   },
   {
-    name: 'Hacker News',
-    url: 'https://hnrss.org/frontpage'
+    name: '爱范儿',
+    url: 'https://www.ifanr.com/feed',
+    defaultCategory: '科技'
+  },
+  {
+    name: 'cnBeta',
+    url: 'https://www.cnbeta.com/backend.php',
+    defaultCategory: '科技'
   }
 ];
 
-// 关键词分类 - 黄金和股市
+// 关键词分类
 const KEYWORDS = {
-  黄金: ['黄金', 'gold', 'xau', 'au', '贵金属', '金价', '白银', 'gold price', 'bullion'],
-  股市: ['股票', '股市', 'a股', '港股', '美股', '大盘', '指数', '涨停', '跌停', 'stock', 'share', 'market', 'nasdaq', 'dow', 'sp500', ' equities', 'ipo', '上市']
+  财经: ['金融', '银行', '保险', '投资', '理财', '经济', '货币', '汇率', '基金', '债券', '期货', '外汇', '贷款', '存款', '支付', '财经'],
+  科技: ['科技', '技术', '互联网', 'AI', '人工智能', '区块链', '芯片', '半导体', '5G', '云计算', '大数据', '物联网', '科技'],
+  创业: ['创业', '融资', '投资', 'startup', 'vc', 'pe', '天使投资', '独角兽', 'IPO', '上市', '并购', '收购', '创业']
 };
 
-function categorize(title, content = '') {
+function categorize(title, content = '', defaultCategory) {
   const text = (title + ' ' + content).toLowerCase();
   
-  for (const kw of KEYWORDS.黄金) {
-    if (text.includes(kw.toLowerCase())) return '黄金';
+  for (const [category, words] of Object.entries(KEYWORDS)) {
+    for (const word of words) {
+      if (text.includes(word.toLowerCase())) {
+        return category;
+      }
+    }
   }
   
-  for (const kw of KEYWORDS.股市) {
-    if (text.includes(kw.toLowerCase())) return '股市';
-  }
-  
-  return null;
+  return defaultCategory || '财经';
 }
 
 function extractImage(item) {
@@ -88,14 +98,17 @@ async function fetchFromSource(source) {
     const feed = await rssParser.parseURL(source.url);
     
     const items = [];
-    for (const item of feed.items.slice(0, 8)) {
-      const category = categorize(item.title || '', item.contentSnippet || '');
-      if (!category) continue;
+    for (const item of feed.items.slice(0, 10)) {
+      const category = categorize(
+        item.title || '', 
+        item.contentSnippet || '',
+        source.defaultCategory
+      );
       
       items.push({
         id: generateId(),
         title: item.title?.trim() || '无标题',
-        summary: cleanHtml(item.contentSnippet || item.description).substring(0, 150) + '...',
+        summary: cleanHtml(item.contentSnippet || item.description).substring(0, 160) + '...',
         source: source.name,
         url: item.link || item.guid,
         publishTime: item.isoDate || item.pubDate || new Date().toISOString(),
@@ -113,7 +126,7 @@ async function fetchFromSource(source) {
 }
 
 async function fetchAllNews() {
-  console.log('🚀 开始抓取黄金 & 股市新闻...\n');
+  console.log('🚀 开始抓取新闻...\n');
   
   const allNews = [];
   
@@ -134,20 +147,24 @@ async function fetchAllNews() {
   // 按时间排序
   uniqueNews.sort((a, b) => new Date(b.publishTime) - new Date(a.publishTime));
   
-  const goldCount = uniqueNews.filter(n => n.category === '黄金').length;
-  const stockCount = uniqueNews.filter(n => n.category === '股市').length;
+  // 统计
+  const stats = {};
+  for (const item of uniqueNews) {
+    stats[item.category] = (stats[item.category] || 0) + 1;
+  }
   
   console.log(`\n✅ 抓取完成`);
-  console.log(`   🥇 黄金: ${goldCount} 条`);
-  console.log(`   📊 股市: ${stockCount} 条`);
   console.log(`   📰 总计: ${uniqueNews.length} 条`);
   console.log(`   🖼️  带图片: ${uniqueNews.filter(n => n.image).length} 条`);
+  for (const [cat, count] of Object.entries(stats)) {
+    console.log(`   • ${cat}: ${count} 条`);
+  }
   
   return {
     lastUpdate: new Date().toISOString(),
     totalCount: uniqueNews.length,
-    stats: { gold: goldCount, stock: stockCount },
-    news: uniqueNews.slice(0, 30)
+    stats: stats,
+    news: uniqueNews.slice(0, 40)
   };
 }
 
