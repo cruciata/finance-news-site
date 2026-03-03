@@ -4,70 +4,78 @@ const path = require('path');
 
 const rssParser = new Parser({
   headers: {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'application/rss+xml, application/xml, text/xml'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
   },
-  timeout: 10000
+  timeout: 15000,
+  customFields: {
+    item: ['media:content', 'media:thumbnail', 'enclosure', 'description', 'content:encoded']
+  }
 });
 
-// 黄金和股市相关的新闻源
+// 可靠的新闻源
 const NEWS_SOURCES = [
   {
-    name: 'WSJ Markets',
-    url: 'https://feeds.a.dj.com/rss/RSSMarketsMain.xml'
+    name: '36氪',
+    url: 'https://36kr.com/feed'
   },
   {
-    name: 'Investing.com',
-    url: 'https://www.investing.com/rss/news.rss'
+    name: 'Solidot',
+    url: 'https://www.solidot.org/index.rss'
   },
   {
-    name: 'FXStreet',
-    url: 'https://www.fxstreet.com/rss/news'
+    name: 'TechCrunch',
+    url: 'https://techcrunch.com/feed/'
   },
   {
-    name: 'MarketWatch',
-    url: 'http://feeds.marketwatch.com/marketwatch/topstories'
-  },
-  {
-    name: 'Seeking Alpha',
-    url: 'https://seekingalpha.com/feed.xml'
-  },
-  {
-    name: '华尔街见闻',
-    url: 'https://wallstreetcn.com/rss.xml'
+    name: 'Hacker News',
+    url: 'https://hnrss.org/frontpage'
   }
 ];
 
-// 关键词分类 - 只保留黄金和股市
+// 关键词分类 - 黄金和股市
 const KEYWORDS = {
-  黄金: ['gold', 'xau', '贵金属', 'precious metal', 'bullion', 'gold price', '金价', '黄金'],
-  股市: ['stock', 'equity', 'share', 'market', '指数', '大盘', 'a股', '港股', '美股', 'nasdaq', 'dow', 's&p', 'sp500', '股市', '股票', '涨停', '跌停', '牛市', '熊市']
+  黄金: ['黄金', 'gold', 'xau', 'au', '贵金属', '金价', '白银', 'gold price', 'bullion'],
+  股市: ['股票', '股市', 'a股', '港股', '美股', '大盘', '指数', '涨停', '跌停', 'stock', 'share', 'market', 'nasdaq', 'dow', 'sp500', ' equities', 'ipo', '上市']
 };
 
 function categorize(title, content = '') {
   const text = (title + ' ' + content).toLowerCase();
   
-  // 检查黄金关键词
-  for (const keyword of KEYWORDS.黄金) {
-    if (text.includes(keyword.toLowerCase())) {
-      return '黄金';
-    }
+  for (const kw of KEYWORDS.黄金) {
+    if (text.includes(kw.toLowerCase())) return '黄金';
   }
   
-  // 检查股市关键词
-  for (const keyword of KEYWORDS.股市) {
-    if (text.includes(keyword.toLowerCase())) {
-      return '股市';
-    }
+  for (const kw of KEYWORDS.股市) {
+    if (text.includes(kw.toLowerCase())) return '股市';
   }
   
-  // 默认分类（基于内容判断）
-  if (text.includes('fed') || text.includes('federal reserve') || text.includes('interest rate') || 
-      text.includes('gdp') || text.includes('inflation') || text.includes('经济') || text.includes('央行')) {
-    return '股市'; // 宏观经济新闻归为股市
+  return null;
+}
+
+function extractImage(item) {
+  // media:content
+  if (item['media:content']?.url) return item['media:content'].url;
+  if (item['media:content']?.$?.url) return item['media:content'].$.url;
+  
+  // media:thumbnail
+  if (item['media:thumbnail']?.url) return item['media:thumbnail'].url;
+  if (item['media:thumbnail']?.$?.url) return item['media:thumbnail'].$.url;
+  
+  // enclosure
+  if (item.enclosure?.url?.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
+    return item.enclosure.url;
   }
   
-  return null; // 不属于黄金或股市，过滤掉
+  // 从内容中提取
+  const content = item['content:encoded'] || item.content || item.description || '';
+  const imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (imgMatch) return imgMatch[1];
+  
+  return null;
+}
+
+function cleanHtml(html) {
+  return html?.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() || '';
 }
 
 function generateId() {
@@ -80,24 +88,23 @@ async function fetchFromSource(source) {
     const feed = await rssParser.parseURL(source.url);
     
     const items = [];
-    for (const item of feed.items.slice(0, 10)) {
-      const category = categorize(item.title || '', item.contentSnippet || item.content || '');
-      
-      // 只保留黄金和股市分类的新闻
+    for (const item of feed.items.slice(0, 8)) {
+      const category = categorize(item.title || '', item.contentSnippet || '');
       if (!category) continue;
       
       items.push({
         id: generateId(),
         title: item.title?.trim() || '无标题',
-        summary: (item.contentSnippet || item.content || '暂无摘要').substring(0, 180) + '...',
+        summary: cleanHtml(item.contentSnippet || item.description).substring(0, 150) + '...',
         source: source.name,
         url: item.link || item.guid,
         publishTime: item.isoDate || item.pubDate || new Date().toISOString(),
-        category: category
+        category: category,
+        image: extractImage(item)
       });
     }
     
-    console.log(`  ✅ ${source.name}: ${items.length} 条相关新闻`);
+    console.log(`  ✅ ${source.name}: ${items.length} 条`);
     return items;
   } catch (error) {
     console.error(`  ❌ 抓取失败 ${source.name}:`, error.message);
@@ -134,12 +141,13 @@ async function fetchAllNews() {
   console.log(`   🥇 黄金: ${goldCount} 条`);
   console.log(`   📊 股市: ${stockCount} 条`);
   console.log(`   📰 总计: ${uniqueNews.length} 条`);
+  console.log(`   🖼️  带图片: ${uniqueNews.filter(n => n.image).length} 条`);
   
   return {
     lastUpdate: new Date().toISOString(),
     totalCount: uniqueNews.length,
     stats: { gold: goldCount, stock: stockCount },
-    news: uniqueNews.slice(0, 40)
+    news: uniqueNews.slice(0, 30)
   };
 }
 
