@@ -17,79 +17,8 @@ const yearEl = document.getElementById('year');
 // Initialize
 async function init() {
   yearEl.textContent = new Date().getFullYear();
-  initBackground();
   await loadNews();
   bindEvents();
-}
-
-// Background Animation
-function initBackground() {
-  const canvas = document.getElementById('bgCanvas');
-  if (!canvas) return;
-  
-  const ctx = canvas.getContext('2d');
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
-  
-  const particles = [];
-  const particleCount = 20;
-  
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.2;
-      this.vy = (Math.random() - 0.5) * 0.2;
-      this.radius = Math.random() * 1.5 + 0.5;
-      this.opacity = Math.random() * 0.2 + 0.05;
-    }
-    
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-    }
-    
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(102, 126, 234, ${this.opacity})`;
-      ctx.fill();
-    }
-  }
-  
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-  
-  let frameCount = 0;
-  function animate() {
-    frameCount++;
-    // 每2帧渲染一次，降低性能消耗
-    if (frameCount % 2 === 0) {
-      ctx.clearRect(0, 0, width, height);
-      
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-    }
-    
-    requestAnimationFrame(animate);
-  }
-  
-  animate();
-  
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
 }
 
 // Load News Data
@@ -130,23 +59,11 @@ function renderNews() {
     return;
   }
   
-  newsGrid.innerHTML = filtered.map((item, index) => createNewsCard(item, index)).join('');
-  
-  // Animate cards entrance
-  const cards = newsGrid.querySelectorAll('.news-card');
-  cards.forEach((card, i) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    setTimeout(() => {
-      card.style.transition = 'all 0.4s ease';
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }, i * 60);
-  });
+  newsGrid.innerHTML = filtered.map((item) => createNewsCard(item)).join('');
 }
 
 // Create News Card with Image
-function createNewsCard(item, index) {
+function createNewsCard(item) {
   const imageHtml = item.image ? `
     <div class="card-image">
       <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
@@ -157,7 +74,7 @@ function createNewsCard(item, index) {
   ` : '';
   
   return `
-    <article class="news-card category-${item.category}" data-url="${escapeHtml(item.url)}" style="animation-delay: ${index * 0.08}s">
+    <article class="news-card category-${item.category}" data-url="${escapeHtml(item.url)}">
       ${imageHtml}
       <div class="card-body">
         <div class="card-header">
